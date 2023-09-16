@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my first template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+        }
+        hr {
+            border: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            margin: 50px;
+        }
+
+        tr {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 350px;
+        }
+        .but{
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 40px;
+        }
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+        div{
+            margin: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+    <h1>This is my first template</h1>
+    <p>welcome to my app</p>
+    <hr>
+    <h3>Members</h3>
+    <table border="1">
+        {% for x in mymembers %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.firstname}}</td>
+            <td>{{x.lastname}}</td>
+            <td><button><a href="delete/{{x.id}}">delete</a></button></td>
+            <td><button><a href="update/{{x.id}}">update</a></td></button>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><button class="but"><a href="add/">Add member</a></button></p>
+</div>
+</body>
+</html>
